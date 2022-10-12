@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		DB7DD0BF28DDE5BB00B16664 /* SideMenuListButtonModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB7DD0BE28DDE5BB00B16664 /* SideMenuListButtonModel.swift */; };
 		DBAD08D428DB4FBC00E878EB /* SwiftUI_SlideMenuApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBAD08D328DB4FBC00E878EB /* SwiftUI_SlideMenuApp.swift */; };
 		DBAD08D628DB4FBC00E878EB /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBAD08D528DB4FBC00E878EB /* ContentView.swift */; };
 		DBAD08D828DB4FBF00E878EB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DBAD08D728DB4FBF00E878EB /* Assets.xcassets */; };
@@ -17,6 +18,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		DB7DD0BE28DDE5BB00B16664 /* SideMenuListButtonModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideMenuListButtonModel.swift; sourceTree = "<group>"; };
 		DBAD08D028DB4FBC00E878EB /* SwiftUI_SlideMenu.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwiftUI_SlideMenu.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DBAD08D328DB4FBC00E878EB /* SwiftUI_SlideMenuApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftUI_SlideMenuApp.swift; sourceTree = "<group>"; };
 		DBAD08D528DB4FBC00E878EB /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -38,6 +40,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		DB7DD0BC28DDE58900B16664 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				DB7DD0BE28DDE5BB00B16664 /* SideMenuListButtonModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		DBAD08C728DB4FBC00E878EB = {
 			isa = PBXGroup;
 			children = (
@@ -57,9 +67,10 @@
 		DBAD08D228DB4FBC00E878EB /* SwiftUI_SlideMenu */ = {
 			isa = PBXGroup;
 			children = (
-				DBAD08D328DB4FBC00E878EB /* SwiftUI_SlideMenuApp.swift */,
 				DBAD08E628DB52BA00E878EB /* Extension */,
+				DB7DD0BC28DDE58900B16664 /* Model */,
 				DBAD08E128DB508F00E878EB /* View */,
+				DBAD08D328DB4FBC00E878EB /* SwiftUI_SlideMenuApp.swift */,
 				DBAD08D728DB4FBF00E878EB /* Assets.xcassets */,
 				DBAD08D928DB4FBF00E878EB /* Preview Content */,
 			);
@@ -163,6 +174,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				DBAD08E328DB513800E878EB /* BaseView.swift in Sources */,
+				DB7DD0BF28DDE5BB00B16664 /* SideMenuListButtonModel.swift in Sources */,
 				DBAD08D628DB4FBC00E878EB /* ContentView.swift in Sources */,
 				DBAD08D428DB4FBC00E878EB /* SwiftUI_SlideMenuApp.swift in Sources */,
 				DBAD08E828DB52E100E878EB /* View+get.swift in Sources */,
