@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		DB1C2DB028F64EE4001C8EDA /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB1C2DAF28F64EE4001C8EDA /* HomeView.swift */; };
 		DB7DD0BF28DDE5BB00B16664 /* SideMenuListButtonModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB7DD0BE28DDE5BB00B16664 /* SideMenuListButtonModel.swift */; };
 		DBAD08D428DB4FBC00E878EB /* SwiftUI_SlideMenuApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBAD08D328DB4FBC00E878EB /* SwiftUI_SlideMenuApp.swift */; };
 		DBAD08D628DB4FBC00E878EB /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBAD08D528DB4FBC00E878EB /* ContentView.swift */; };
@@ -18,6 +19,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		DB1C2DAF28F64EE4001C8EDA /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		DB7DD0BE28DDE5BB00B16664 /* SideMenuListButtonModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideMenuListButtonModel.swift; sourceTree = "<group>"; };
 		DBAD08D028DB4FBC00E878EB /* SwiftUI_SlideMenu.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwiftUI_SlideMenu.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DBAD08D328DB4FBC00E878EB /* SwiftUI_SlideMenuApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftUI_SlideMenuApp.swift; sourceTree = "<group>"; };
@@ -91,6 +93,7 @@
 				DBAD08D528DB4FBC00E878EB /* ContentView.swift */,
 				DBAD08E228DB513800E878EB /* BaseView.swift */,
 				DBAD08E428DB521C00E878EB /* SideMenu.swift */,
+				DB1C2DAF28F64EE4001C8EDA /* HomeView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -174,6 +177,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				DBAD08E328DB513800E878EB /* BaseView.swift in Sources */,
+				DB1C2DB028F64EE4001C8EDA /* HomeView.swift in Sources */,
 				DB7DD0BF28DDE5BB00B16664 /* SideMenuListButtonModel.swift in Sources */,
 				DBAD08D628DB4FBC00E878EB /* ContentView.swift in Sources */,
 				DBAD08D428DB4FBC00E878EB /* SwiftUI_SlideMenuApp.swift in Sources */,

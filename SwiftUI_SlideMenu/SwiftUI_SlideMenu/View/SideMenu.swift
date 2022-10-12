@@ -118,6 +118,7 @@ struct SideMenu: View {
                         .frame(width: 22, height: 22)
                 }
                 .padding([.horizontal, .top], 15)
+                .foregroundColor(.primary)
             }
         }
         .padding(.vertical)
@@ -133,23 +134,28 @@ struct SideMenu: View {
 }
 
 extension SideMenu {
+    @ViewBuilder
     func TabButton(title: String, image: String) -> some View {
-        ZStack {
-            Button {
-                print(title)
-            } label: {
-                HStack(spacing: 14) {
-                    Image(image)
-                        .resizable()
-                        .renderingMode(.template)
-                        .aspectRatio(contentMode: .fill)
-                        .frame(width: 22, height: 22)
-                    
-                    Text(title)
-                }
-                .foregroundColor(.primary)
-                .frame(maxWidth: .infinity, alignment: .leading)
+        
+        // For navigation
+        // Simple replace button with Navigation Links
+        
+        NavigationLink {
+            Text("\(title) View")
+                .navigationTitle(title)
+            
+        } label: {
+            HStack(spacing: 14) {
+                Image(image)
+                    .resizable()
+                    .renderingMode(.template)
+                    .aspectRatio(contentMode: .fill)
+                    .frame(width: 22, height: 22)
+                
+                Text(title)
             }
+            .foregroundColor(.primary)
+            .frame(maxWidth: .infinity, alignment: .leading)
         }
     }
 }
