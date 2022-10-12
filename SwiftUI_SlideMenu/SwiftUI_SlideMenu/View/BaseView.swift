@@ -12,6 +12,9 @@ struct BaseView: View {
     @State var offset: CGFloat = 0
     @State var lastStoredOffset: CGFloat = 0
     
+    //gesture offset
+    @GestureState var gestureOffset: CGFloat = 0
+    
     init() {
         UITabBar.appearance().isHidden = true
     }
@@ -79,7 +82,17 @@ struct BaseView: View {
             // max Size
             .frame(width: getRect().width + sideBarWidth)
             .offset(x: -sideBarWidth / 2)
-            .offset(x: offset)
+            .offset(x: offset > 0 ? offset : 0)
+            //gesture
+            .gesture(
+                DragGesture()
+                    .updating($gestureOffset, body: { value, out, _ in
+                        out = value.translation.width
+                    })
+                    .onEnded(
+                        onEnd(value:)
+                    )
+            )
             // No nav bar title
             // hiding nav bar
             .navigationBarTitleDisplayMode(.inline)
@@ -96,6 +109,9 @@ struct BaseView: View {
                 offset = 0
                 lastStoredOffset = 0
             }
+        }
+        .onChange(of: gestureOffset) { newValue in
+            onChange()
         }
     }
 }
@@ -117,6 +133,45 @@ extension BaseView {
                 .frame(maxWidth: .infinity)
         }
 
+    }
+}
+
+extension BaseView {
+    func onChange() {
+        let sideBarWidth = getRect().width - 90
+        offset = (gestureOffset != 0) ? (gestureOffset + lastStoredOffset < sideBarWidth ? gestureOffset + lastStoredOffset : offset) : offset
+    }
+    
+    func onEnd(value: DragGesture.Value) {
+        let sideBarWidth = getRect().width - 90
+        let translation = value.translation.width
+        
+        withAnimation {
+            if translation > 0 {
+                if translation > (sideBarWidth / 2) {
+                    offset = sideBarWidth
+                    showMenu = true
+                } else {
+                    
+                    //extra case
+                    if offset == sideBarWidth || !showMenu {
+                        return
+                    }
+                    offset = 0
+                    showMenu = false
+                }
+            } else {
+                if -translation > (sideBarWidth / 2) {
+                    offset = 0
+                    showMenu = false
+                } else {
+                    offset = sideBarWidth
+                    showMenu = true
+                }
+            }
+        }
+        
+        lastStoredOffset = offset
     }
 }
 
